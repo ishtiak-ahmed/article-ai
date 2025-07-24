@@ -45,7 +45,7 @@ export function DeleteArticleDialog({ articleTitle, articleId, onDelete, trigger
     <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
       <AlertDialogTrigger asChild>
         {trigger || (
-          <Button variant="ghost" size="icon">
+          <Button variant="ghost" size="icon" data-testid="trash-icon">
             <Trash2 className="h-4 w-4" />
           </Button>
         )}
@@ -78,6 +78,7 @@ export function DeleteArticleDialog({ articleTitle, articleId, onDelete, trigger
             onClick={handleDelete}
             disabled={isDeleting}
             className="bg-red-600 hover:bg-red-700 focus:ring-red-600"
+            data-testid="delete-confirm-button"
           >
             {isDeleting ? (
               <>
